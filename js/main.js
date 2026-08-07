@@ -1,11 +1,8 @@
-/* Avi Jani portfolio: nav state, scroll reveals, sticky header */
+/* Avi Jani: masthead state, mobile nav, active section */
 
 (function () {
   'use strict';
 
-  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  /* Year in footer */
   var year = document.getElementById('year');
   if (year) year.textContent = new Date().getFullYear();
 
@@ -28,33 +25,13 @@
     });
   }
 
-  /* Hairline under the header once the page scrolls */
-  var topbar = document.getElementById('topbar');
+  /* Hairline under the masthead once the page moves */
+  var masthead = document.getElementById('masthead');
   var onScroll = function () {
-    if (topbar) topbar.classList.toggle('is-stuck', window.scrollY > 8);
+    if (masthead) masthead.classList.toggle('is-stuck', window.scrollY > 6);
   };
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
-
-  /* Reveal on scroll */
-  var items = document.querySelectorAll('.reveal');
-
-  if (reduced || !('IntersectionObserver' in window)) {
-    items.forEach(function (el) { el.classList.add('is-in'); });
-  } else {
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (!entry.isIntersecting) return;
-        entry.target.classList.add('is-in');
-        io.unobserve(entry.target);
-      });
-    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
-
-    items.forEach(function (el, i) {
-      el.style.transitionDelay = Math.min(i % 4, 3) * 60 + 'ms';
-      io.observe(el);
-    });
-  }
 
   /* Active section in the nav */
   var links = Array.prototype.slice.call(document.querySelectorAll('.nav a'));
@@ -70,7 +47,7 @@
           a.classList.toggle('is-active', a.getAttribute('href') === '#' + entry.target.id);
         });
       });
-    }, { rootMargin: '-45% 0px -50% 0px' });
+    }, { rootMargin: '-40% 0px -55% 0px' });
 
     sections.forEach(function (s) { spy.observe(s); });
   }
