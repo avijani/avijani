@@ -42,7 +42,7 @@ body{
   -webkit-font-smoothing:antialiased;
 }
 
-img{ max-width:100%; display:block; }
+img{ max-width:100%; height:auto; display:block; }
 a{ color:inherit; }
 b{ font-weight:600; }
 
@@ -59,7 +59,7 @@ b{ font-weight:600; }
 
 ::selection{ background:var(--blood); color:var(--paper); }
 
-/* â”€â”€ Shared type roles â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Shared type roles ───────────────────────────────────── */
 
 .kicker,
 .rule__label,
@@ -87,7 +87,7 @@ b{ font-weight:600; }
   font-optical-sizing:auto;
 }
 
-/* â”€â”€ Masthead â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Masthead ────────────────────────────────────────────── */
 
 .masthead{
   position:sticky; top:0; z-index:100;
@@ -138,7 +138,7 @@ b{ font-weight:600; }
 .navbtn[aria-expanded="true"] span:first-child{ transform:translateY(2px) rotate(45deg); }
 .navbtn[aria-expanded="true"] span:last-child{ transform:translateY(-2px) rotate(-45deg); }
 
-/* â”€â”€ Hero â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Hero ────────────────────────────────────────────────── */
 
 .hero{ padding:clamp(52px,9vw,120px) 0 clamp(56px,8vw,104px); }
 
@@ -225,7 +225,7 @@ b{ font-weight:600; }
 }
 .txtlink:hover{ color:var(--blood); border-bottom-color:var(--blood); }
 
-/* â”€â”€ Section rule: carries the section name and a fact â”€â”€â”€â”€â”€ */
+/* ── Section rule: carries the section name and a fact ───── */
 
 .section{ padding:clamp(50px,7vw,92px) 0; }
 
@@ -246,7 +246,7 @@ b{ font-weight:600; }
 .rule__line{ flex:1; height:1px; background:var(--line); }
 .rule__meta{ color:var(--faint); }
 
-/* â”€â”€ Lead grid â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Lead grid ───────────────────────────────────────────── */
 
 .lead-grid{
   display:grid;
@@ -274,7 +274,7 @@ h2{
   max-width:46ch;
 }
 
-/* â”€â”€ Column sets â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Column sets ─────────────────────────────────────────── */
 
 .cols{ display:grid; gap:0; }
 .cols--three{ grid-template-columns:repeat(3,1fr); }
@@ -299,7 +299,7 @@ h2{
 .plain{ list-style:none; margin:0; padding:0; }
 .plain li{ font-size:.92rem; color:var(--ink-2); padding:3px 0; }
 
-/* â”€â”€ Experience â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Experience ──────────────────────────────────────────── */
 
 .role{
   display:grid;
@@ -373,7 +373,7 @@ h2{
   margin-right:7px;
 }
 
-/* â”€â”€ Featured project â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Featured project ────────────────────────────────────── */
 
 .feature{ padding-bottom:clamp(38px,4.5vw,62px); }
 
@@ -399,7 +399,7 @@ h2{
 
 .feature__grid{
   display:grid;
-  grid-template-columns:1fr 1fr;
+  grid-template-columns:1fr 1.08fr;
   gap:clamp(30px,4.5vw,64px);
   padding-top:clamp(26px,3vw,38px);
   border-top:1px solid var(--line);
@@ -414,6 +414,7 @@ h2{
   transition:border-color .25s var(--ease);
 }
 .plate__link:hover{ border-color:var(--ink); }
+.plate__link img{ width:100%; height:auto; aspect-ratio:1472 / 1760; }
 .plate figcaption{
   margin-top:12px;
   color:var(--faint);
@@ -424,7 +425,7 @@ h2{
 }
 .plate figcaption b{ color:var(--ink-2); }
 
-/* â”€â”€ Project rows â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Project rows ────────────────────────────────────────── */
 
 .proj{
   display:grid;
@@ -441,7 +442,7 @@ h2{
   margin:-10px 0 16px;
 }
 
-/* â”€â”€ Earlier work â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Earlier work ────────────────────────────────────────── */
 
 .earlier{ margin-top:clamp(44px,5vw,72px); }
 .earlier .col__label{ border-bottom:2px solid var(--ink); padding-bottom:12px; }
@@ -464,7 +465,7 @@ h2{
 }
 .earlier__links a:hover{ border-bottom-color:var(--blood); }
 
-/* â”€â”€ Contact â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Contact ─────────────────────────────────────────────── */
 
 .contact__head{ margin:0 0 24px; }
 .contact__note{ margin:0 0 clamp(34px,4vw,50px); max-width:44ch; }
@@ -485,13 +486,13 @@ h2{
 }
 .mailto:hover{ color:var(--ink); }
 
-/* â”€â”€ Footer â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Footer ──────────────────────────────────────────────── */
 
 .footer{ border-top:1px solid var(--line); padding:22px 0 34px; }
 .footer__inner{ display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; }
 .footer p{ margin:0; color:var(--faint); }
 
-/* â”€â”€ Load sequence: the only motion on the page â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Load sequence: the only motion on the page ──────────── */
 
 .line{
   opacity:0;
@@ -501,7 +502,7 @@ h2{
 }
 @keyframes rise{ to{ opacity:1; transform:none; } }
 
-/* â”€â”€ Responsive â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* ── Responsive ──────────────────────────────────────────── */
 
 @media (max-width:1000px){
   .cols--four{ grid-template-columns:repeat(2,1fr); row-gap:36px; }
